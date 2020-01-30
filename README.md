@@ -32,7 +32,11 @@ After generating your private key, you have to pair your client with your BTCPay
 ```bash
 # Replace the BTCPAY_XXX envirnoment variables with your values and run:
 
-$ [space] BTCPAY_URL=https://mydomain.com/ BTCPAY_KEY=... BTCPAY_PAIRCODE=... node -e "const btcpay=require('btcpay'); new btcpay.BTCPayClient(process.env.BTCPAY_URL, btcpay.crypto.load_keypair(Buffer.from(process.env.BTCPAY_KEY, 'hex'))).pair_client(process.env.BTCPAY_PAIRCODE).then(console.log).catch(console.error)"
+$ [space] BTCPAY_URL=https://mydomain.com/ BTCPAY_KEY=... BTCPAY_PAIRCODE=... 
+
+node -e "const btcpay=require('btcpay'); 
+const clientp = new btcpay.BTCPayClient(process.env.BTCPAY_URL,
+btcpay.crypto.load_keypair(Buffer.from(process.env.BTCPAY_KEY,'hex'))).pair_client(process.env.BTCPAY_PAIRCODE).then(console.log).catch(console.error)"
 
 # (prepend the line with a space to prevent BTCPAY_KEY from being saved to your bash history)
 

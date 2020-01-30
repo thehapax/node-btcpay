@@ -1,5 +1,5 @@
 {
-  "name": "btcpay",
+  "name": "node-btcpay",
   "version": "0.2.4",
   "description": "A nodejs client implementation for BTCPay",
   "main": "dist/index.js",
@@ -26,26 +26,28 @@
   },
   "dependencies": {
     "bs58": "^4.0.1",
-    "elliptic": "^6.4.0",
+    "btcpay": "^0.2.4",
+    "elliptic": "^6.5.2",
     "request": "^2.85.0",
-    "request-promise": "^4.2.4",
-    "underscore": "^1.8.3"
+    "request-promise": "^4.2.5",
+    "strip-ansi": "^5.2.0",
+    "underscore": "^1.9.2"
   },
   "devDependencies": {
-    "@types/bs58": "^4.0.0",
-    "@types/elliptic": "^6.4.6",
-    "@types/jest": "^24.0.13",
-    "@types/node": "^11.13.5",
-    "@types/puppeteer": "^1.12.4",
-    "@types/request": "^2.48.1",
-    "@types/request-promise": "^4.1.42",
-    "@types/underscore": "^1.8.14",
+    "@types/bs58": "^4.0.1",
+    "@types/elliptic": "^6.4.12",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^11.15.5",
+    "@types/puppeteer": "^1.20.3",
+    "@types/request": "^2.48.4",
+    "@types/request-promise": "^4.1.45",
+    "@types/underscore": "^1.9.4",
     "jest": "^24.9.0",
-    "prettier": "^1.17.1",
-    "puppeteer": "^1.16.0",
-    "rimraf": "^2.6.3",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.4"
+    "prettier": "^1.19.1",
+    "puppeteer": "^1.20.0",
+    "rimraf": "^2.7.1",
+    "ts-jest": "^24.3.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.5"
   }
 }

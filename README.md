@@ -14,7 +14,7 @@ Type ".help" for more information.
 
 > const keypair = require('btcpay').crypto.generate_keypair()
 > const privkey = keypair.getPrivate('hex')
-> const pubkey =  keypair.getPublic(true, 'hex')
+> const pubkey =  keypair.getPublic(true|false, 'hex')
 
 >>> <Key priv: XXXXXXX pub: null >
 ```

@@ -2,13 +2,19 @@
 
 ## Install
 ```shell
-npm install btcpayserver/node-btcpay
+npm i btcpay
 ```
 
 ## Private key generation
 * Generate and save private key:
 ```bash
-$ node -p "require('btcpay').crypto.generate_keypair()"
+$ node
+>Welcome to Node.js v12.10.0.
+Type ".help" for more information.
+
+> const keypair = require('btcpay').crypto.generate_keypair()
+> const privkey = keypair.getPrivate('hex')
+> const pubkey =  keypair.getPublic(true, 'hex')
 
 >>> <Key priv: XXXXXXX pub: null >
 ```

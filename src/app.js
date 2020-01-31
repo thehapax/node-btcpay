@@ -10,6 +10,11 @@ const keypair = btcpay.crypto.load_keypair(new Buffer.from(btcpay_key, 'hex'))
 // Recreate client
 const client = new btcpay.BTCPayClient(btcpay_url, keypair, {merchant: merch_id})
 
-// get btc/usd rates
-const btc_rates = client.get_rates(['BTC_USD'], store_id)
+// get btc/hkd rates
+const btc_rates = client.get_rates(['BTC_HKD'], store_id)
 btc_rates.then(rates => console.log(rates)).catch(err => console.log(err))
+
+// create invoice and return url
+const get_invoice = client.create_invoice({price: 100, currency: 'HKD'})
+get_invoice.then(invoice => console.log(invoice.url)).catch(err => console.log(err))
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# user defined values
+export BTCPAY_URL='https://myurl.lndyn.com/'
+export BTCPAY_PAIRCODE=''
+export STORE_ID=''
+
+# generated values from above
+export BTCPAY_KEY=''
+export BTCPAY_MERCHANT=''
+
+
+echo "BTCPAY_URL is: $BTCPAY_URL"
+echo "BTCPAY_KEY is: $BTCPAY_KEY"
+echo "BTCPAY_MERCHANT is: $BTCPAY_MERCHANT"

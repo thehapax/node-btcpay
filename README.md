@@ -2,7 +2,7 @@
 
 ## Install
 ```shell
-npm i btcpay
+npm install
 ```
 
 ## Private key generation

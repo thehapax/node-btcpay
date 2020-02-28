@@ -20,6 +20,7 @@ Type ".help" for more information.
 ```
 
 Store the value of "priv" in a save place, e.g. environment variables
+### MAKE SURE YOU STORE THE KEY THIS FOR REUSE NOW OR THE BELOW WON'T WORK ###
 
 ## Pairing
 

@@ -1,8 +1,8 @@
+// this is a sample app to get client, rates and create invoice
 const btcpay_url = process.env.BTCPAY_URL
 const merch_id = process.env.BTCPAY_MERCHANT
 const store_id = process.env.STORE_ID
 const btcpay_key =  process.env.BTCPAY_KEY
-
 
 const btcpay = require('btcpay')
 const keypair = btcpay.crypto.load_keypair(new Buffer.from(btcpay_key, 'hex'))

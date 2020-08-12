@@ -2,25 +2,17 @@
 
 ## Install
 ```shell
-npm install
+npm i btcpay
 ```
 
 ## Private key generation
 * Generate and save private key:
 ```bash
-$ node
->Welcome to Node.js v12.10.0.
-Type ".help" for more information.
-
-> const keypair = require('btcpay').crypto.generate_keypair()
-> const privkey = keypair.getPrivate('hex')
-> const pubkey =  keypair.getPublic(true|false, 'hex')
-
->>> <Key priv: XXXXXXX pub: null >
+$ node -p "require('btcpay').crypto.generate_keypair().getPrivate('hex')"
+XXXXXXXXXXXXXXXXXXXXX
 ```
 
-Store the value of "priv" in a save place, e.g. environment variables
-### MAKE SURE YOU STORE THE KEY THIS FOR REUSE NOW OR THE BELOW WON'T WORK ###
+Store the printed value in a safe place, e.g. environment variables
 
 ## Pairing
 
@@ -33,18 +25,14 @@ After generating your private key, you have to pair your client with your BTCPay
 ```bash
 # Replace the BTCPAY_XXX envirnoment variables with your values and run:
 
-$ [space] BTCPAY_URL=https://mydomain.com/ BTCPAY_KEY=... BTCPAY_PAIRCODE=... 
-
-node -e "const btcpay=require('btcpay'); 
-const keypair = btcpay.crypto.load_keypair(Buffer.from(process.env.BTCPAY_KEY,'hex'))
-const clientp = new btcpay.BTCPayClient(process.env.BTCPAY_URL, keypair).pair_client(process.env.BTCPAY_PAIRCODE).then(console.log).catch(console.error)"
+$ [space] BTCPAY_URL=https://mydomain.com/ BTCPAY_KEY=... BTCPAY_PAIRCODE=... node -e "const btcpay=require('btcpay'); new btcpay.BTCPayClient(process.env.BTCPAY_URL, btcpay.crypto.load_keypair(Buffer.from(process.env.BTCPAY_KEY, 'hex'))).pair_client(process.env.BTCPAY_PAIRCODE).then(console.log).catch(console.error)"
 
 # (prepend the line with a space to prevent BTCPAY_KEY from being saved to your bash history)
 
 >>> { merchant: 'XXXXXX' }
 ```
 
-Store the value of "merchant" in a save place, e.g. environment variables
+Store the value of "merchant" in a safe place, e.g. environment variables
 
 ## Recreating a client
 After pairing your client to the store, you can recreate the client as needed and use it in your code
